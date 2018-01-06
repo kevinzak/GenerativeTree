@@ -6,26 +6,29 @@
 #include "bluecadet/views/ImageView.h"
 #include "bluecadet/views/TouchView.h"
 
-#include "tree/TreeController.h"
+#include "BaseBranch.h"
 namespace genApp {
 
-	typedef std::shared_ptr<class MainController> MainControllerRef;
+	typedef std::shared_ptr<class BaseTree> BaseTreeRef;
 
-	class MainController : public bluecadet::views::BaseView {
+	class BaseTree : public bluecadet::views::BaseView {
 
 	public:
 
-		MainController();
-		~MainController();
+		BaseTree();
+		~BaseTree();
 
 		void	setup();
 
 	protected:
 		// Functions
 		void	setupParams();
-
+		void	generateBranches(const int min, const int max);
 		// Views
-		TreeControllerRef	mTreeController;
+		// TODO: Add Branches
+		BaseBranchRef mTestBranch;
+		BaseBranchRef mTestBranch_1;
+
 
 	};
 }

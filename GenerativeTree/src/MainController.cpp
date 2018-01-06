@@ -52,6 +52,9 @@ namespace genApp {
 		setSize(ScreenLayout::getInstance()->getAppSize());
 
 		// Setup Views
+		mTreeController = make_shared<TreeController>();
+		mTreeController->setup();
+		addChild(mTreeController);
 	}
 
 

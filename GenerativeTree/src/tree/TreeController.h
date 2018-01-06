@@ -2,21 +2,24 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 
+// Blueadet Includes
 #include "bluecadet/views/BaseView.h"
 #include "bluecadet/views/ImageView.h"
 #include "bluecadet/views/TouchView.h"
 
-#include "tree/TreeController.h"
+// Project Includes
+#include "base\BaseTree.h"
+
 namespace genApp {
 
-	typedef std::shared_ptr<class MainController> MainControllerRef;
+	typedef std::shared_ptr<class TreeController> TreeControllerRef;
 
-	class MainController : public bluecadet::views::BaseView {
+	class TreeController : public bluecadet::views::BaseView {
 
 	public:
 
-		MainController();
-		~MainController();
+		TreeController();
+		~TreeController();
 
 		void	setup();
 
@@ -25,7 +28,7 @@ namespace genApp {
 		void	setupParams();
 
 		// Views
-		TreeControllerRef	mTreeController;
+		BaseTreeRef mBaseTree;
 
 	};
 }
